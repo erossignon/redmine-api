@@ -1,0 +1,23 @@
+{
+  "name": "redmine-api",
+  "version": "0.0.1",
+  "description": "access Redmine using NodeJS and Redmine REST api",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "keywords": [
+    "Redmine",
+    "API",
+    "REST"
+  ],
+  "author": "Etienne Rossignon",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "should": "^4.0.4"
+  }
+}
