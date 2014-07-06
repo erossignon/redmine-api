@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+
+before_script:
+  - npm install -g istanbul coveralls mocha
+  - npm install
+
+after_success:
+  - make coveralls
+script:
+  - npm test
+  - make test-cov
