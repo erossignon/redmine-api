@@ -1,6 +1,6 @@
 {
   "name": "redmine-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "access Redmine using NodeJS and Redmine REST api",
   "main": "index.js",
   "repository": "https://github.com/erossignon/redmine-api",
