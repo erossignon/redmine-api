@@ -92,7 +92,7 @@ describe("Testing RedmineWebServer with a fake http connection", function () {
         redmine.http_protocol= new FakeProtocol();
         redmine.http_protocol.get_fixture_file = sinon.stub().returns("fixture_roles.json");
 
-        redmine.fecthRoles(function (err,roles){
+        redmine.fetchRoles(function (err,roles){
             roles.length.should.eql(6);
             done(err);
         });
