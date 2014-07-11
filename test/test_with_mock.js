@@ -27,6 +27,9 @@ function FakeProtocol() {
     util.inherits(FakeReq,EventEmmitter);
 
 
+    this.get_fixture_file = function() {
+        return "";
+    }
     this.request= function(option, callback) {
 
         console.log("options",option);
@@ -34,9 +37,10 @@ function FakeProtocol() {
         var req = new FakeReq();
         callback(res);
 
+        var self = this;
         setImmediate(function(){
 
-            fs.readFile(path.join(__dirname,"fixture_project_versions.json"),function (err, data){
+            fs.readFile(path.join(__dirname, self.get_fixture_file()),function (err, data){
 
                 res.emit("data",data);
                 res.statusCode = 200;
@@ -63,6 +67,8 @@ describe("Testing RedmineWebServer with a fake http connection", function () {
     it("should fetch project versions",function(done){
 
         redmine.http_protocol= new FakeProtocol();
+        redmine.http_protocol.get_fixture_file = sinon.stub().returns("fixture_project_versions.json");
+
 
         redmine.fetchVersions("project",function (err,versions){
 
@@ -71,4 +77,35 @@ describe("Testing RedmineWebServer with a fake http connection", function () {
         });
     });
 
+    it("should fetch issue statuses",function(done){
+
+        redmine.http_protocol= new FakeProtocol();
+        redmine.http_protocol.get_fixture_file = sinon.stub().returns("fixture_issue_statuses.json");
+
+        redmine.fetchIssueStatuses(function (err,issues_statuses){
+            issues_statuses.length.should.eql(21);
+            done(err);
+        });
+    });
+    it("should fetch roles",function(done){
+
+        redmine.http_protocol= new FakeProtocol();
+        redmine.http_protocol.get_fixture_file = sinon.stub().returns("fixture_roles.json");
+
+        redmine.fecthRoles(function (err,roles){
+            roles.length.should.eql(6);
+            done(err);
+        });
+    });
+
+    it("should fetch trackers",function(done){
+
+        redmine.http_protocol= new FakeProtocol();
+        redmine.http_protocol.get_fixture_file = sinon.stub().returns("fixture_trackers.json");
+
+        redmine.fecthTrackers(function (err,trackers){
+            trackers.length.should.eql(12);
+            done(err);
+        });
+    });
 });
