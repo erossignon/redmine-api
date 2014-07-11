@@ -1,0 +1,96 @@
+{"issue_statuses": [
+    {
+        "is_default": true,
+        "name": "Nouveau",
+        "id": 7
+    },
+    {
+        "name": "Analyse ACME",
+        "id": 15
+    },
+    {
+        "name": "Analyse client",
+        "id": 8
+    },
+    {
+        "name": "Chiffré",
+        "id": 9
+    },
+    {
+        "name": "Validé",
+        "id": 10
+    },
+    {
+        "name": "En cours",
+        "id": 11
+    },
+    {
+        "name": "Traité",
+        "id": 12
+    },
+    {
+        "is_closed": true,
+        "name": "Livré",
+        "id": 16
+    },
+    {
+        "is_closed": true,
+        "name": "Refusé",
+        "id": 14
+    },
+    {
+        "is_closed": true,
+        "name": "Fermé",
+        "id": 13
+    },
+    {
+        "is_closed": true,
+        "name": "pris en compte",
+        "id": 17
+    },
+    {
+        "is_closed": true,
+        "name": "OK",
+        "id": 18
+    },
+    {
+        "is_closed": true,
+        "name": "KO",
+        "id": 19
+    },
+    {
+        "is_closed": true,
+        "name": "Non applicable",
+        "id": 20
+    },
+    {
+        "is_closed": true,
+        "name": "Implémentée",
+        "id": 21
+    },
+    {
+        "is_closed": true,
+        "name": "Problème",
+        "id": 22
+    },
+    {
+        "name": "Justifié",
+        "id": 23
+    },
+    {
+        "name": "Analyse",
+        "id": 24
+    },
+    {
+        "name": "Attente ACME",
+        "id": 25
+    },
+    {
+        "name": "Résolu",
+        "id": 27
+    },
+    {
+        "name": "Réponse",
+        "id": 28
+    }
+]}

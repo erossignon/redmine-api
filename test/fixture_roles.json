@@ -1,0 +1,26 @@
+{"roles": [
+    {
+        "name": "Manager ",
+        "id": 3
+    },
+    {
+        "name": "Développeur ",
+        "id": 4
+    },
+    {
+        "name": "End User",
+        "id": 5
+    },
+    {
+        "name": "Rapporteur",
+        "id": 6
+    },
+    {
+        "name": "Gestion",
+        "id": 9
+    },
+    {
+        "name": "Robot de test",
+        "id": 11
+    }
+]}

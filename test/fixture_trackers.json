@@ -1,0 +1,17 @@
+{
+    "trackers":
+    [
+        {"name": "Evolution", "id": 2},
+        {"name": "Anomalie", "id": 1},
+        {"name": "Demande d'expertise", "id": 6},
+        {"name": "Support", "id": 7},
+        {"name": "Recette", "id": 9},
+        {"name": "Tache", "id": 10},
+        {"name": "Action", "id": 11},
+        {"name": "Risque", "id": 12},
+        {"name": "Fiche de test", "id": 14},
+        {"name": "Execution d'un test", "id": 15},
+        {"name": "Idée", "id": 16},
+        {"name": "Exigence", "id": 18},
+    ]
+}
