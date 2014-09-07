@@ -25,6 +25,7 @@ var RedmineWebServer = require("../lib/redmine_web_server").RedmineWebServer;
 
 var fs = require("fs");
 var should = require("should");
+var _ = require("underscore");
 
 describe("Testing RedmineWebServer", function () {
 
@@ -42,11 +43,32 @@ describe("Testing RedmineWebServer", function () {
         it("should fetch list of projects", function (done) {
 
 
-            redmine.fetchProjectName(function(err, projects) {
+            redmine.fetchProjectNames(function(err, projects) {
                 console.warn(" projects ", projects.map(function(project){return project.name;}));
                 done(err);
-
             });
+
+        });
+        it("should fetch list of projet from cache, in offline mode",function(done) {
+
+            var offline_config = _.clone(config);
+            offline_config.offline = true;
+            offline_config.password = "scrapped";
+            offline_config.url = "scrapped";
+
+            var redmine2 = new RedmineWebServer(offline_config);
+
+            redmine.fetchProjectNames(function(err1, projects) {
+                should(err1).be.eql(null);
+                redmine2.fetchProjectNames(function(err2,projects2){
+
+                    should(err2).be.eql(null);
+                    projects2.length.should.eql(1);
+                    projects2[0].name.should.eql("Redmine");
+                    done(err2);
+                })
+            });
+
 
         });
 
